@@ -1,6 +1,6 @@
 # Wicket-1.5.16
 
-Exemplo de uso do framework WIcket, na versão 1.5.16
+Exemplo de uso do framework Wicket, na versão 1.5.16
 
 Exemplos: http://examples8x.wicket.apache.org/index.html
 
