@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Apache Wicket Quickstart</title>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+	</head>
+	<body>
+		<div id="hd">
+			<div id="logo">
+				<img src="logo.png" width="50px" height="50px" alt="Wicket Logo" />
+				<h1>Apache Wicket</h1>
+			</div>
+		</div>
+            <div id="bd">
+                <form action="CadastroPessoa">
+                   
+			<wicket:container wicket:id="version"></wicket:container>
+                        <br>
+                        <input type="text" name="nome" value="" />
+                        <br>
+                        <wicket:container wicket:id="name"></wicket:container>
+                        <br>
+                        <input type="text" name="cpf" value="" />
+                        <br>
+                        <wicket:container wicket:id="mail"></wicket:container>
+                        <br>
+                        <input type="text" name="email" wicket:id="username" value="" />
+                        <br>
+                        <input type="submit" value="Cadastrar" />
+			
+                </form>
+			
+		</div>
+		<div id="ft">
+		</div>
+	</body>
+</html>
