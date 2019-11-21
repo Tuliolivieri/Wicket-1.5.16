@@ -15,6 +15,7 @@
  */
 package servlets;
 
+import Util.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -43,6 +44,12 @@ public class CadastroPessoa extends HttpServlet {
         String usr = request.getParameter("nome");
         String email = request.getParameter("username");
         String cpf = request.getParameter("cpf");
+        String conecto = "capaiz";
+        
+        if(Banco.conectar())
+            conecto = "sim";
+        else
+            conecto = Banco.getCon().getMensagemErro();
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -58,6 +65,7 @@ public class CadastroPessoa extends HttpServlet {
             out.println("<h5>Nome:" + usr + "</h5>");
             out.println("<h5>Email :" + email + "</h5>");
             out.println("<h5>CPF :" + cpf + "</h5>");
+            out.println("<h5>Conectado :" + conecto + "</h5>");
             out.println("</body>");
             out.println("</html>");
         } finally {
