@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Aluno.
+ * Copyright 2019 Tulio.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package servlets;
 
-import Util.Banco;
+import Util.Conexao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.wicket.validation.IValidatable;
+import org.apache.wicket.validation.validator.EmailAddressValidator;
 
 /**
  *
@@ -46,10 +48,18 @@ public class CadastroPessoa extends HttpServlet {
         String cpf = request.getParameter("cpf");
         String conecto = "capaiz";
         
-        if(Banco.conectar())
+        String sql = "insert into pessoa (nome, email, cpf) values ('" + usr + "', '" + email + "', '" + cpf + "')";
+        
+        Conexao c = new Conexao();
+        
+        boolean gravou = c.manipular(sql);
+        
+        if(gravou)
             conecto = "sim";
         else
-            conecto = Banco.getCon().getMensagemErro();
+            conecto = c.getMensagemErro();
+        
+        //EmailAddressValidator eav = EmailAddressValidator.getInstance();
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();

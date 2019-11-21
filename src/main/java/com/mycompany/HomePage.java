@@ -15,10 +15,11 @@ public class HomePage extends WebPage {
 		add(new Label("version", "Nome: "));
                 add(new Label("name", "CPF: "));
                 add(new Label("mail", "Email: "));
-                TextField mail;
-
-	add(mail = new TextField("username", Model.of("")));
-        EmailAddressValidator validator = EmailAddressValidator.getInstance();
-	mail.add(validator);
+                
+//                TextField mail;
+//
+//	add(mail = new TextField("username", Model.of("")));
+//        EmailAddressValidator validator = EmailAddressValidator.getInstance();
+//	mail.add(validator);
     }
 }
